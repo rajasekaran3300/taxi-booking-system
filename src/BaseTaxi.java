@@ -1,21 +1,41 @@
-abstract class BaseTaxi implements Taxi{
+abstract class BaseTaxi implements Taxi {
+
     private String carNumber;
     private String carName;
-    boolean isAC;
-    int seatingCapacity;
-    double averageRating;
-    double pricePerkm;
-    String MobileNumber;
-    double baseFare;
+    private boolean isAC;
+    private int seatingCapacity;
+    private double averageRating;
+    private double pricePerKm;
+    private boolean isAvailable;
+    private String mobileNumber;
+    private double baseFare;
+    private String fuelType;
 
-    public BaseTaxi(String carNumber, double averageRating, String carName, boolean isAC, String mobileNumber, int seatingCapacity, double pricePerkm) {
-
+    public BaseTaxi(
+            String carNumber,
+            double averageRating,
+            String carName,
+            boolean isAC,
+            String mobileNumber,
+            int seatingCapacity,
+            double pricePerKm,
+            String fuelType,
+            int currentLocation) {
+        this.carNumber = carNumber;
+        this.averageRating = averageRating;
+        this.carName = carName;
+        this.isAC = isAC;
+        this.mobileNumber = mobileNumber;
+        this.seatingCapacity = seatingCapacity;
+        this.pricePerKm = pricePerKm;
+        this.isAvailable = true;
+        this.baseFare = 0;
+        this.fuelType = fuelType;
     }
 
-    double getBaseFare(){
-        return this.baseFare;
+    double getBaseFare() {
+        return baseFare;
     }
-
 
     @Override
     public String getCarNumber() {
@@ -37,11 +57,18 @@ abstract class BaseTaxi implements Taxi{
         return seatingCapacity;
     }
 
+    @Override
+    public boolean isAvailable() {
+        return isAvailable;
+    }
 
     @Override
     public double getAverageRating() {
         return averageRating;
     }
 
-
+    @Override
+    public double getPricePerKm() {
+        return pricePerKm;
+    }
 }

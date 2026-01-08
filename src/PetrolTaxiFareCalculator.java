@@ -1,6 +1,6 @@
 public class PetrolTaxiFareCalculator {
 
-    public static double calculateBaseFair(PetrolTaxi taxi) {
-        return taxi.baseFare +((taxi.getPricePerKm()*taxi.kmPerHour) +100);
+    public static double calculateBaseFair(PetrolTaxi taxi, int kmDriven , double specialCharge) {
+        return taxi.getBaseFare() + (taxi.getPricePerKm() * kmDriven) +specialCharge;
     }
 }
