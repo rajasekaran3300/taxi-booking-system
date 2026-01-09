@@ -1,5 +1,8 @@
+import service.Taxi;
+import service.TaxiService;
+
 import java.util.ArrayList;
-import java.util.SortedMap;
+
 
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
@@ -35,5 +38,8 @@ public class Main {
         for(Taxi taxi : taxis){
             System.out.println(taxi);
         }
+
+        TaxiService taxiService = new TaxiService();
+        taxiService.filterByPrice(taxis);
     }
 }

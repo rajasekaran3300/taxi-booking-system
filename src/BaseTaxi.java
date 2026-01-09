@@ -1,3 +1,5 @@
+import service.Taxi;
+
 abstract class BaseTaxi implements Taxi {
 
     private String carNumber;
